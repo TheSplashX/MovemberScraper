@@ -44,7 +44,7 @@ async Task Index()
 
     var totalDonationsElement = await page.QuerySelectorAsync(".mospace-heroarea--donations-target-amount-number");
     var totalDonations = (await totalDonationsElement.GetPropertyAsync("innerText")).RemoteObject.Value.ToString();
-    File.WriteAllText(@"totalDonations.txt", "Will c'est le plus hot");
+    File.WriteAllText(@"totalDonations.txt", totalDonations);
 
     var listDonnations = await page.QuerySelectorAllAsync("div[id^=\"post-wrapper-\"][id$=\"-all\"]");
 
